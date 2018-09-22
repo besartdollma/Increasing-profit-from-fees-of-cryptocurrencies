@@ -1,4 +1,4 @@
-import knapsack solvers as ks
+import knapsack_solvers as ks
 import networkx as nx
 import random
 import time

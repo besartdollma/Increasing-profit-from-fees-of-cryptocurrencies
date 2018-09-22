@@ -2,7 +2,7 @@ import networkx as nx
 import random
 import time
 import matplotlib.pyplot as plt
-import dependency knapsack solvers as dks
+import dependency_knapsack_solvers as dks
 
 AVERAGE_RUN = 25
 BLOCK_SIZE = 50000

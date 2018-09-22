@@ -1,4 +1,4 @@
-import dependency knapsack solvers as dks
+import dependency_knapsack_solvers as dks
 import createGraph
 import matplotlib.pyplot as plt
 import time
@@ -67,10 +67,11 @@ def plot2():
     greedy_time = []
     for i in range(len(Epsilon)):
         greedy_time.append(time_g)
-    plt.plot(Epsilon, greedy_time, 'ro')
-    plt.plot(Epsilon, Time, 'b+')
+    plt.plot(Epsilon, greedy_time, 'ro', label = 'Greedy Approximation')
+    plt.plot(Epsilon, Time, 'b+', label = '1+Eps')
     plt.xlabel("Epsilon")
     plt.ylabel("Running time")
+    plt.legend()
     plt.show()
 ##########################################################################################
 # Graph Y=fee, X=day, both greedy and generalized greedy
@@ -170,7 +171,7 @@ def plot9(time_samples):
 def createGraph5(date):
     samples=[]
     sol=[]
-    for i in range(10):
+    for i in range(1,10):
         G = createGraph.create_graph(date, i)
         samples.append(i)
         sol.append(dks.get_fee_greedy2(G, BLOCK_SIZE))
@@ -183,8 +184,8 @@ def createGraph5(date):
     plt.ylabel("Solution value")
     plt.show()
 
-    samples = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-    sol = [1.5397622700000009, 1.550439100000001, 1.5571744000000014, 1.5621531100000015, 1.5658302600000022,
+    samples = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sol = [1.550439100000001, 1.5571744000000014, 1.5621531100000015, 1.5658302600000022,
      1.5747870100000025, 1.5789343600000023, 1.612468340000002, 1.6204950400000016, 1.6282593800000018]
 
 ##########################################################################################

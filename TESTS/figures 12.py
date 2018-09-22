@@ -1,8 +1,8 @@
-import knapsack solvers as ks
+import knapsack_solvers as ks
 import networkx as nx
 import random
 import time
-import dependency knapsack solvers as dks
+import dependency_knapsack_solvers as dks
 import matplotlib.pyplot as plt
 
 AVERAGE_RUN = 10

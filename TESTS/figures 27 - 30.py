@@ -1,6 +1,6 @@
 import time
 import matplotlib.pyplot as plt
-import dependency knapsack solvers as dks
+import dependency_knapsack_solvers as dks
 import createGraph
 
 BLOCK_SIZE = 1000000 # 1 MB
