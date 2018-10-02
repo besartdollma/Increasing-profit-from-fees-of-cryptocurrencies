@@ -259,14 +259,14 @@
 
 \begin{frame}{The dependency knapsack problem} % Frame 3
     \begin{itemize}
-        \item  {No circular dependencies exist}
-        \item {We will treat the input as a directed acyclic graph 
+        \item  {No circular dependencies exist.}
+        \item {We will treat the input as a directed acyclic graph (DAG)
         $ G = (V,E)$.}
         \item {Each node $v$ represents a transaction that has fee $f(v)$ 
         and size $s(v)$.}
         \item { Each edge $(i,j)$ represents that transaction $j$ is 
         dependent upon transaction $i$.}
-        \item {Transaction $j$ can be selected if transaction $m$ is 
+        \item {Transaction $j$ can be selected iff transaction $m$ is 
         selected $\forall (m,j)\in E$.}
     \end{itemize}
 \end{frame}
@@ -453,20 +453,20 @@
     \begin{example}
          \begin{itemize}
             \item {$ Ancestor(D) = \{D,B,A\} \text{ and } 
-            Ratio(D) = \frac{140}{19} \approx 7.36$.}
+            Ratio(D) = \frac{140}{19} \approx 7.36$.} \pause
             \item {$ Ancestor(B) = \{B,A\} \text{ and } 
-            Ratio(B) = \frac{70}{10} = 7$.}
+            Ratio(B) = \frac{70}{10} = 7$.} \pause{}
             \item {$ Ancestor(C) = \{C,A\} \text{ and } 
-            Ratio(C) = \frac{75}{11} \approx 6.81$.}
+            Ratio(C) = \frac{75}{11} \approx 6.81$.} \pause
             \item {$ Ancestor(A) = \{A\} \text{ and } 
-            Ratio(A) = \frac{40}{6} \approx 6.66$.}
-            \item {The greedy approximation will try to add $Ancestor(D)$
-             to the knapsack but won't succeed since the size of the set 
-             is 19 and the knapsack size is 11.}
+            Ratio(A) = \frac{40}{6} \approx 6.66$.} \pause
+            \item {The greedy approximation will eliminate $Ancestor(D)$
+             because the size of the set 
+             is 19 and the knapsack size is 11.} \pause {}
             \item {The algorithm will then add $Ancestor(B)$ to the 
-            solution and remove $\{B,A\}$ from the other sets.}
+            solution and remove $\{B,A\}$ from the other sets.} \pause
             \item {The algorithm will output $\{A,B\}$. Output value 
-            is 70.}
+            is 70.} \pause 
             \item {Not optimal.}
         \end{itemize}
     \end{example}
@@ -576,11 +576,11 @@
     \begin{itemize}
         \item{Exhaustive search and dynamic programming are infeasible}
             \begin{enumerate}
-                \item {For $n=25$ the exhaustive search runs on average 8 sec.}
-                \item {Dynamic programming for $n=1000$:}
+                \item {For $n=20$ the exhaustive search runs on average 8 sec.}
+                \item {Dynamic programming:}
                 \begin{itemize}
-                    \item {If $W=1000$ runs on average 1 sec.}
-                    \item {If $W = 1 $ MB (block size) runs on average 25 sec.}
+                    \item {If $n=1000, W=1000$ runs on average 1 sec.}
+                    \item {If $n =25, W = 1 $ MB (block size) runs on average 25 sec.}
                 \end{itemize}
             \end{enumerate}
     \end{itemize}
@@ -1129,5 +1129,4 @@
 \end{frame}
 
 \end{document}
-
 
